@@ -4,7 +4,7 @@ pre-commit:
     prettier:
       glob: "*.{js,jsx,ts,tsx,css,json}"
       run: |
-        bunx prettier --write --ignore-unknown {staged_files}
+        yarn prettier --write --ignore-unknown {staged_files}
         git add {staged_files}
       skip:
         - merge
@@ -12,7 +12,7 @@ pre-commit:
     lint:
       glob: "*.{js,jsx,ts,tsx}"
       run: |
-        bunx eslint {staged_files}
+        yarn eslint {staged_files}
         git add {staged_files}
       skip:
         - merge
