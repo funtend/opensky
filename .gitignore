@@ -22,7 +22,6 @@ node_modules
 # misc
 .DS_Store
 .idea
-.yarn
 *.iml
 *.log
 .vscode
@@ -37,6 +36,13 @@ yarn-error.log*
 .env
 .env.*
 *.env.*
-
 *.dev.yml
 
+# dependencies
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

@@ -1,0 +1,27 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: "*.{js,jsx,ts,tsx,css,json}"
+      run: |
+        yarn prettier --write --ignore-unknown {staged_files}
+        git add {staged_files}
+      skip:
+        - merge
+        - rebase
+    lint:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: |
+        yarn eslint {staged_files}
+        git add {staged_files}
+      skip:
+        - merge
+        - rebase
+    stylelint:
+      glob: "*.{css}"
+      run: |
+        stylelint --fix {staged_files}
+        git add {staged_files}
+      skip:
+        - merge
+        - rebase
